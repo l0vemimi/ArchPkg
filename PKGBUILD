@@ -1,7 +1,7 @@
 # Maintainer: Your Name <your.email@example.com>
 
 pkgname=TxtEd
-pkgver=1.0.1
+pkgver=1.1
 pkgrel=1
 pkgdesc="A simple text editor using Python and PyQt6"
 arch=('any')
