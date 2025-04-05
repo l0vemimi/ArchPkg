@@ -1,0 +1,34 @@
+name: Deploy Packages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up GPG
+      run: |
+        gpg --import ${{ secrets.GPG_PRIVATE_KEY }}
+
+    - name: Build and sign packages
+      run: |
+        makepkg --sign
+
+    - name: Create repository metadata
+      run: |
+        repo-add myrepo.db.tar.gz *.pkg.tar.zst
+
+    - name: Deploy to GitHub Pages
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add .
+        git commit -m 'Deploy packages'
+        git push origin gh-pages
