@@ -1,5 +1,5 @@
 
-.˚🦢˚𖥔 ݁˖Personal pacman repository.˚🦢˚𖥔 ݁˖
+˖𖥔 ݁˖🦋˚⋆✮⋆☁️˖Personal pacman repository˖𖥔 ݁˖🦋˚⋆✮⋆☁️˖
 
 
 
